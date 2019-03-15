@@ -14,3 +14,9 @@ License: CC-BY-4.0 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+Depends: R (>= 2.10)
+Imports: summarytools
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

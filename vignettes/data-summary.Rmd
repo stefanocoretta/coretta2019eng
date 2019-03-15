@@ -1,0 +1,27 @@
+---
+title: "Data summary"
+author: "Stefano Coretta"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(summarytools)
+library(coretta2019eng)
+data("eng_durations")
+```
+
+This vignette contains a descriptive summary of the dataframe `eng_durations`.
+
+```{r echo=FALSE}
+print(dfSummary(eng_durations, graph.magnif = 0.75), method = 'render')
+```
+
