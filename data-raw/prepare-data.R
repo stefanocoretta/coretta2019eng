@@ -19,4 +19,4 @@ eng_durations = read_csv("./data-raw/english-durations.csv", na = "--undefined--
   ) %>%
   mutate_if(is.character, as.factor)
 
-use_data(eng_durations)
+use_data(eng_durations, overwrite = TRUE)
