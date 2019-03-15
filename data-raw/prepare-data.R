@@ -13,6 +13,7 @@ eng_durations = read_csv("./data-raw/english-durations.csv", na = "--undefined--
     voicing = factor(voicing, levels = c("voiceless", "voiced")),
     num_syl = factor(num_syl, levels = c("di", "mono")),
     place = factor(place, levels = c("velar", "labial")),
+    vowel = factor(vowel, levels = c("ar", "er", "ee")),
     c2 = factor(c2, levels = c("k", "g", "p", "b")),
     speech_rate = ifelse(num_syl == "mono", 6 / sentence_duration, 7 / sentence_duration),
     speech_rate_c = speech_rate - mean(speech_rate)
