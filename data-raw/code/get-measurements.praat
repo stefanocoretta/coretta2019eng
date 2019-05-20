@@ -33,7 +33,7 @@
 ######################################
 
 mono_dir$ = "../data/raw/mono"
-results_dir$ = "../data/datasets"
+results_dir$ = "../datasets"
 results_file$ = "'results_dir$'/english-durations.csv"
 results_header$ = "speaker,sentence,sentence_ons,sentence_off,c1_rel,c2_rel,v1_ons,v1_off"
 writeFileLine: results_file$, results_header$
