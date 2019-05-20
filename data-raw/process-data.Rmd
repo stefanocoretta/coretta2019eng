@@ -1,0 +1,58 @@
+---
+title: "Process data"
+author: "Stefano Coretta"
+date: "20/05/2019"
+output: 
+  html_document: 
+    highlight: tango
+    number_sections: yes
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+# here package needed
+knitr::opts_knit$set(root.dir = here::here())
+library(tidyverse)
+library(speakr) # https://github.com/stefanocoretta/speakr
+```
+
+# Tangle and weave
+
+```{r tangle}
+lmt("./data-raw/code/english.praat.md")
+```
+
+```{r wave}
+system("pandoc -f gfm -o ./data-raw/code/english.pdf ./data-raw/code/english.praat.md -N --syntax-definition=/Users/stefano/.pandoc/pandoc-praat/praat.xml --highlight-style=/Users/stefano/.pandoc/flamenco.theme --metadata-file=./data-raw/code/english.yaml")
+```
+
+# Convert audio
+
+The audio files are stereo, so we convert them to mono. The audio files are also downsampled to 2250 Hz.
+
+```{r convert}
+praat_run("./data-raw/code/convert.praat")
+```
+
+# Force-alignment
+
+Run SPPAS on the files and correct the alignment.
+
+# Detect burst onsets and create merged annotation TextGrids
+
+This script finds the burst onsets of C1 and C2 and creates a merged TextGrid with all the relevant annotations.
+
+```{r merge}
+praat_run("./data-raw/code/make-textgrid.praat")
+```
+
+Now the merged annotation TextGrid (`[ID]-annotation.TextGrid`) can be corrected (`[ID]-annotation-corrected.TextGrid`).
+
+# Get measurements
+
+We can now extract all the relevant measurements from the corrected annotation TextGrids. The output is saved in `data-raw/datasets`.
+
+```{r get-measures}
+praat_run("./data-raw/code/get-measurements.praat")
+```
