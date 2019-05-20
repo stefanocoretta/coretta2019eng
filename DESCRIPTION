@@ -1,15 +1,15 @@
 Package: coretta2019eng
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
+Title: Data package of Compensatory aspects of the effect of voicing on vowel duration in English
+Version: 0.0.0.9000
 Date: 2019-05-20
 Authors@R: 
   person(given = "Stefano",
     family = "Coretta",
     role = c("aut", "cre"),
     email = paste0("stefano.coretta", "@", "gmail.com"))
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: It provides the datasets from the study Compensatory aspects of
+  the effect of voicing on vowel duration in English.
 License: CC-BY-4.0 + file LICENSE
 Encoding: UTF-8
 LazyData: true
