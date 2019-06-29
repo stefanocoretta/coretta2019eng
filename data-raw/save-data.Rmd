@@ -44,3 +44,10 @@ eng_durations <- read_csv("./data-raw/datasets/english-durations.csv", na = "--u
 ```{r use-data}
 use_data(eng_durations, overwrite = TRUE)
 ```
+
+Save aggregated csv file for use in other software.
+
+```{r aggregate}
+write_csv(eng_durations, path = "./data-raw/aggregated/eng-durations.csv")
+```
+
