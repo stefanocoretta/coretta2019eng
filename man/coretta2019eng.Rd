@@ -3,7 +3,6 @@
 \docType{package}
 \name{coretta2019eng}
 \alias{coretta2019eng}
-\alias{coretta2019eng-package}
 \title{coretta2018eng: Data Package of ...}
 \description{
 Description

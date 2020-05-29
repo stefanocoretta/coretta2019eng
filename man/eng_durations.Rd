@@ -4,7 +4,8 @@
 \name{eng_durations}
 \alias{eng_durations}
 \title{Data on vowel, closure, and release to release duration in English.}
-\format{A tibble with 1800 observations and 21 variables.
+\format{
+A tibble with 1800 observations and 21 variables.
 \describe{
   \item{\code{speaker}}{The speaker's ID.}
   \item{\code{sentence}}{The sentence stimuli.}
@@ -28,7 +29,8 @@
   \item{\code{c2_clos_duration}}{The duration of the closure of C2 (milliseconds).}
   \item{\code{speech_rate}}{The speech rate (number of syllables in the sentence / sentence duration).}
   \item{\code{speech_rate_c}}{Centred speech rate.}
-}}
+}
+}
 \usage{
 eng_durations
 }
